@@ -1,0 +1,4 @@
+function mTower = WTGtowerMass(dRot, mHub)
+
+%determine WTG tower mass%
+mTower = 69.3359413340923 + 1.3119326614957*(dRot^0.772474241751266)*((mHub/1e3)^0.6494);

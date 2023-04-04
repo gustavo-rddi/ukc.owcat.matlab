@@ -1,0 +1,3 @@
+function mBlade = WTGbladeMass(dRot)
+
+mBlade = 69.3359413340923 + 1.3119326614957*(dRot^0.772474241751266)*(Prate^0.630463917678683);

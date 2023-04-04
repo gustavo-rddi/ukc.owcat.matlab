@@ -1,0 +1,10 @@
+function cTrans = jacketTransportCosts(o, data, nSupply, stocVar, markMods)
+
+%transport of monopile foundation [EUR]%
+cTrans = 24900000 * (nSupply/70)^0.5;
+
+%apply CPI inflation modifier and currency conversion%
+cTrans = cTrans * costScalingFactor(o, data, 2019, 'EUR');
+
+%apply any stochastic and market modifiers to WTG cost%
+cTrans = cTrans * scenarioModifier('vessels.cost', stocVar, markMods);
