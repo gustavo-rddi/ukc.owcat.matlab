@@ -16,7 +16,7 @@ switch lower(o.design.expCond)
 end
 
 %calculate rated current of underground cable sections%
-IsectUG = undergroundACcableProperties('Irate', data.HVAC.AsectUG, 'Al');
+IsectUG = undergroundACcableProperties('Irate', data.HVAC.AsectUG, 'Cu');
 
 %initialise number of cables per SS%
 NminCable = ceil(o.OWF.cap/data.HVAC.capMaxCBL);
@@ -134,4 +134,5 @@ for k = 1 : data.model.maxIter
 end
 
 %store overall OWF export cable number%
-o.OWF.nExportCable = NcableSS*o.OWF.nOSS;
+% o.OWF.nExportCable = NcableSS*o.OWF.nOSS;
+o.OWF.nExportCable = 2;

@@ -25,8 +25,10 @@ switch upper(o.OWF.expType)
         
 end
 
+fAvailExp = 1;
+
 %determine OWF wake losses%
-o.OWF.lWake = WTGwakeLosses(o.OWF.nWTG, o.design.fSpace);
+o.OWF.lWake = WTGwakeLosses(o.WTG(1).cap,o.OWF.nWTG, o.design.fSpace);
 
 %Add conservative points on OWF wake losses%
 % o.OWF.lWake = o.OWF.lWake +o.OWF.lWakeconservative;
@@ -58,8 +60,6 @@ o.OWF.annYield(yrComm) = o.OWF.annYield(yrComm) .* ((1:o.OWF.nComm) - 3/4)/o.OWF
 %determine mean gros and net wind farm AEP%
 o.OWF.AEPgross = sum(o.OWF.AEPgross)/sum(o.OWF.AEPgross~=0);
 o.OWF.AEPnet = sum(o.OWF.AEPnet)/sum(o.OWF.AEPnet~=0);
-
-
 
 %determine wind farm capacity factor%
 o.OWF.fCap = o.OWF.AEPnet / (o.OWF.cap*SImultiplier('yr'));

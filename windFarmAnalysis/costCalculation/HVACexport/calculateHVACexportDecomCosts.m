@@ -78,3 +78,5 @@ for i = 1 : numel(o.vessels.SSdecom.type)
     o.DECEX.real.substationDecom = o.DECEX.real.substationDecom + vesselMobilisationCost(o, data, o.vessels.SSdecom.type{i}, stocVar, markMods) * o.vessels.SSdecom.nVesMob(i);
     
 end
+
+o.DECEX.real.substationDecom = 0;

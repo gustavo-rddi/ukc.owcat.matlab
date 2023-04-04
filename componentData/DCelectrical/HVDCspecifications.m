@@ -3,8 +3,8 @@ function [HVDC VSC] = HVDCspecifications()
 %%-----------------------------------------------------------------------%%
 %%------HVAC-COMPONENT-SPECIFICATIONS------------------------------------%%
 %%-----------------------------------------------------------------------%%
-HVDC.capMaxConv = {1000,'MW'};        %max. capacity of converter (SQSS) %%
-HVDC.capMaxCBL  = {1320,'MW'};       %max. allowed cable capacity (SQSS) %%
+HVDC.capMaxConv = {1000,'MW'};        %1000 MW before max. capacity of converter (SQSS) %%
+HVDC.capMaxCBL  = {1200,'MW'};       %1320 MW before max. allowed cable capacity (SQSS) %%
 %%-----------------------------------------------------------------------%%
 HVDC.VgridCon   = {400,'kV'};                   %grid connection voltage %%
 HVDC.fAvailSS   = {99,'%'};        %onshore HVDC substation availability %%

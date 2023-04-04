@@ -34,3 +34,7 @@ for i = 1 : numel(o.vessels.SSinst.type)
     o.CAPEX.real.substationInstall = o.CAPEX.real.substationInstall + vesselMobilisationCost(o, data, o.vessels.SSinst.type{i}, stocVar, markMods) * o.vessels.SSinst.nVesMob(i);
     
 end
+
+o.CAPEX.real.substationInstall = 0;
+o.CAPEX.real.exportInstall = 0;
+o.CAPEX.real.exportInstall_conv= 0;

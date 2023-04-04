@@ -20,7 +20,7 @@ for i = 1 : length(o.proc.onshoreCable.type)
 
     
     %determine cost per m of underground export cable section (adj. to ref. year)%
-    cSect = undergroundACcableCost(o, data, o.proc.onshoreCable.type(i), o.design.Vexport, 'Al', stocVar, markMods);
+    cSect = undergroundACcableCost(o, data, o.proc.onshoreCable.type(i), o.design.Vexport, 'Cu', stocVar, markMods);
     
     %add to total supply cost for phase%
     o.CAPEX.real.onshoreSupply = o.CAPEX.real.onshoreSupply + cSect*o.proc.onshoreCable.lSupply(i);

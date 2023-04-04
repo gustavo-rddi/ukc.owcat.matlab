@@ -37,8 +37,8 @@ elseif offset == 21
     colEnd = 'Z';
 
 elseif offset == 47
-    colEnd = 'AZ';
-    
+    colEnd = 'AZ';    
+
 elseif offset <= 696
     a = floor((offset+5)/26);
     b = (offset+5)- a*26;

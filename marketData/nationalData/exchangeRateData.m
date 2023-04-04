@@ -1,6 +1,6 @@
 function exch = exchangeRateData()
 
-exch.EUR.GBP = 0.885;  %0.84334809 
+exch.EUR.GBP = 0.8528;  %0.885
 exch.DKK.GBP = 0.112971;  
 
 exch.EUR.DKK = exch.EUR.GBP/exch.DKK.GBP;

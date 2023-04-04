@@ -32,8 +32,21 @@ switch lower(comp)
         hPrep = data.array.hPrep * learningEffect(nCables, data.array.Nref, data.array.LRinst) * nCables;
         hPullIn = 2*data.array.hPullIn * learningEffect(nCables, data.array.Nref, data.array.LRinst) * nCables;                          
     
-        %determine cable laying and trenching times%
-        hLay = lCableSB/data.vessel.CLV.vLay;
+        switch o.zone.fDrill 
+            
+            case 0
+                
+            %determine cable laying times%
+            hLay = lCableSB/data.vessel.CLV.vLaySimp;
+        
+            case 1
+                
+            %determine cable laying times%
+            hLay = lCableSB/data.vessel.CLV.vLayComp;
+            
+        end
+        
+        %determine cable trenching times%
         hBury = lCableSB/data.vessel.OCV.vTrench;
         
         %determine distance to centre of WTG array%
@@ -84,8 +97,21 @@ switch lower(comp)
             
         end
         
-        %determine cable laying and trenching times%
-        hLay = lCableSB/data.vessel.CLV.vLay;
+        switch o.zone.fDrill
+            
+            case 0
+                
+            %determine cable laying times for simple soil%
+            hLay = lCableSB/data.vessel.CLV.vLaySimp;
+        
+            case 1
+        
+            %determine cable laying times for complex soil%
+            hLay = lCableSB/data.vessel.CLV.vLayComp;
+        
+        end
+        
+        %determine cable trenching times%
         hBury = lCableSB/data.vessel.OCV.vTrench;
         
         %determine CLV and CLB travel times%

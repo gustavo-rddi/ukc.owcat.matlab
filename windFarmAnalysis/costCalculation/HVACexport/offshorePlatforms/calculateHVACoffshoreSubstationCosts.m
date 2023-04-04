@@ -63,7 +63,7 @@ for i = 1 : o.OWF.nOSS
        
     end
     
-    o.offshoreSS(i).Ctopside = o.offshoreSS(i).Ctopside - o.offshoreSS(i).Cfnd;
+%      o.offshoreSS(i).Ctopside = o.offshoreSS(i).Ctopside - o.offshoreSS(i).Cfnd;
 
     %add costs to total substation supply costs% 
     o.CAPEX.real.substationSupply = o.CAPEX.real.substationSupply + o.offshoreSS(i).Ctopside + o.offshoreSS(i).Cfnd;

@@ -60,6 +60,9 @@ for i = 1 : o.OWF.nZones
         %store WTG foundation type%
         WTGmodel.fndType = o.zone(i).fndType;
         
+        %store WTG topside mass%
+        WTGmodel.mTopSide = o.zone(i).mTopSide;
+        
         %copy zonal properties of WTG unit%
         WTGmodel.dWater = o.zone(i).dWater;
         WTGmodel.dLandfall = o.zone(i).dLandfall;
@@ -67,6 +70,7 @@ for i = 1 : o.OWF.nZones
         WTGmodel.dPortOM = o.zone(i).dPortOM;
         WTGmodel.vWind = o.zone(i).vWind;
         WTGmodel.pDrill = o.zone(i).fDrill;
+        WTGmodel.soilType = o.zone(i).soilType;
         
         %determine spacing around WTG unit%
         WTGmodel.dSpace = WTGmodel.dRot*o.design.fSpace;

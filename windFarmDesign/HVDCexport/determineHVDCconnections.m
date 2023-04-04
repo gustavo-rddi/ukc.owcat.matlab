@@ -29,6 +29,7 @@ for i = 1 : o.OWF.nOSS
     o.offshoreSS(i).dPortCon  = mean([o.WTG(o.offshoreSS(i).iWTGcon).dPortCon]);
     o.offshoreSS(i).dPortOM   = mean([o.WTG(o.offshoreSS(i).iWTGcon).dPortCon]);
     o.offshoreSS(i).pDrill    = mean([o.WTG(o.offshoreSS(i).iWTGcon).pDrill]);
+    o.offshoreSS(i).soilType  = mean([o.WTG(o.offshoreSS(i).iWTGcon).soilType]);
     
     if o.OWF.nOSS > 1
     
@@ -71,6 +72,7 @@ for i = 1 : o.OWF.nConv
     o.offshoreConv(i).dPortCon  = mean([o.offshoreSS(o.offshoreConv(i).iSScon).dPortCon]);
     o.offshoreConv(i).dPortOM   = mean([o.offshoreSS(o.offshoreConv(i).iSScon).dPortCon]);
     o.offshoreConv(i).pDrill    = mean([o.offshoreSS(o.offshoreConv(i).iSScon).pDrill]);
+    o.offshoreConv(i).soilType  = mean([o.offshoreSS(o.offshoreConv(i).iSScon).soilType]);
     
     %calculate total OSS export cable offshore length (sea-bed snaking and water depth)%
     o.offshoreConv(i).lCableOffshore = o.offshoreConv(i).dLandfall*(1 + data.HVDC.fRoute) + o.offshoreConv(i).dWater + data.HVDC.lInt;

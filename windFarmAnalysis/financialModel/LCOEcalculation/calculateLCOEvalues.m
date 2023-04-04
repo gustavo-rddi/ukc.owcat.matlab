@@ -5,9 +5,6 @@ LCOEguess = getLCOEestimate(o, data);
 
 o.LCOE.CF = fixedLCOEcashFlows(o, data, stocVar, markMods);
 
-% test
-% npv = evaluateProjectNPV(o,o.LCOE.CF,data,LCOEguess,'LCOE','real');
-
 %calculate nominal LCOE values and strike prices%
 o.LCOE.nom.total = fzero(@(x)evaluateProjectNPV(o, o.LCOE.CF, data, x, 'LCOE', 'nom'), LCOEguess);
 o.LCOE.real.total = fzero(@(x)evaluateProjectNPV(o, o.LCOE.CF, data, x, 'LCOE', 'real'), LCOEguess);

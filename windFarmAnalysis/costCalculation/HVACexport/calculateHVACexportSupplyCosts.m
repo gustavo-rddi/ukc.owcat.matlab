@@ -23,3 +23,7 @@ end
 if o.design.intConSS
     o = calculateHVACinterconnectorCosts(o, data, stocVar, markMods);
 end
+
+o.CAPEX.real.exportSupply = 0;
+o.CAPEX.real.substationSupply = 0;
+o.CAPEX.real.onshoreSupply = 0;

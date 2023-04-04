@@ -11,7 +11,7 @@ end
 data.WTG = WTGspecifications();
 
 %load foundation specifications for WTG and SS units%
-[data.fnd, data.MP, data.TP, data.sJKT, data.hJKT, data.PP, data.semi, data.drag, data.GBF] = foundationSpecifications();
+[data.fnd, data.MP, data.TP, data.sJKT, data.hJKT, data.PP, data.GBF, data.semiS, data.sparS, data.tlpS, data.brgC, data.brgS, data.moor, data.drag, data.rope, data.pileAnch] = foundationSpecifications();
 
 %load array cable specifications%
 data.array = arraySpecifications();

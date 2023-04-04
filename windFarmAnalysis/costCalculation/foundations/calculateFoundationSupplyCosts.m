@@ -25,7 +25,7 @@ if any(strcmpi({o.WTG.fndType}, 'monopile'))
     
     CtransportMP = monopileTransportCosts(o, data, nMPsupply, stocVar, markMods);
         
-    o.CAPEX.real.fndSupply = o.CAPEX.real.fndSupply + CoverheadMP + CtransportMP;
+    o.CAPEX.real.fndSupply = o.CAPEX.real.fndSupply + CoverheadMP + 0*CtransportMP;
     
 end
 
@@ -40,7 +40,7 @@ if any(strcmpi({o.WTG.fndType}, 'jacket'))
     
     CtransportJKT = jacketTransportCosts(o, data, nJKTsupply, stocVar, markMods);
     
-    o.CAPEX.real.fndSupply = o.CAPEX.real.fndSupply + CoverheadJKT + CtransportJKT;
+    o.CAPEX.real.fndSupply = o.CAPEX.real.fndSupply + 0*CoverheadJKT + 0*CtransportJKT;
         
 end
 
@@ -90,7 +90,7 @@ for i = 1 : o.OWF.nWTG
             Cproc = jacketProcurementCost(o, data, o.WTG(i), 'sJKT', nJKTsupply, nPPsupply, stocVar, markMods);
             
             %add overhead costs for jacket supply%
-            o.WTG(i).Cfnd = Cproc + CoverheadJKT/nJKTsupply;
+            o.WTG(i).Cfnd = Cproc + 0*CoverheadJKT/nJKTsupply;
             
         case 'semisub'
             

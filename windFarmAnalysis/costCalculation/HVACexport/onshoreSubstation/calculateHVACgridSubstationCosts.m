@@ -30,4 +30,4 @@ CcivilSS = substationCivilWorksCost(o, data, o.gridSS.capTrans*o.gridSS.nTrans, 
 
 %add costs to current phase%
 o.CAPEX.real.onshoreSupply = o.CAPEX.real.onshoreSupply + CequipSS + CcivilSS;
-o.CAPEX.real.onshoreSupply_onsubstation = o.CAPEX.real.onshoreSupply_onsubstation +  CequipSS + CcivilSS;
+o.CAPEX.real.onshoreSupply_onsubstation = o.CAPEX.real.onshoreSupply_onsubstation + CequipSS + CcivilSS;

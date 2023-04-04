@@ -3,7 +3,7 @@ function o = calculateArraySupplyCosts(o, data, stocVar, markMods)
 for i = 1 : length(o.proc.arrayCable.type)
     
     %determine cost per m of array cable section (adj. to ref. year)%
-    cSect = subseaACcableCost(o, data, o.proc.arrayCable.type(i), o.design.Varray, o.design.arrCond, stocVar, markMods);
+    cSect = subseaArraycableCost(o, data, o.proc.arrayCable.type(i), o.design.Varray, o.design.arrCond, stocVar, markMods);
     %cSect = subseaACcableCost(o, data, o.proc.arrayCable.type(i), 33e3, o.design.arrCond, stocVar, markMods);
     
     %determine cost per section of array cable auxiliaries (adj. to ref. year)%

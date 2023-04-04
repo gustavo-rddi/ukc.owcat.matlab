@@ -18,3 +18,7 @@ end
 if o.design.intConSS
     o = calculateHVACinterconnectorInstallCosts(o, data, stocVar, markMods);
 end
+
+o.CAPEX.real.exportInstall = 0;
+o.CAPEX.real.substationInstall = 0;
+o.CAPEX.real.onshoreInstall = 0;

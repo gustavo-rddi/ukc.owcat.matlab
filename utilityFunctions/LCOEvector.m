@@ -4,7 +4,8 @@ V = [];
 legend = {};
 
 V(end+1) = o.LCOE.real.development + o.LCOE.real.projManagement;
-V(end+1) = o.LCOE.real.turbSupply + o.LCOE.real.turbInstall + o.LCOE.real.portFacilities/2;
+V(end+1) = o.LCOE.real.turbSupply;
+V(end+1) = o.LCOE.real.turbInstall + o.LCOE.real.portFacilities/2;
 V(end+1) = o.LCOE.real.fndSupply + o.LCOE.real.fndInstall + o.LCOE.real.portFacilities/2;
 V(end+1) = o.LCOE.real.arraySupply + o.LCOE.real.arrayInstall;
 V(end+1) = o.LCOE.real.substationSupply + o.LCOE.real.onshoreSupply+o.LCOE.real.exportSupply+o.LCOE.real.onshoreInstall+o.LCOE.real.gridConnection+o.LCOE.real.substationInstall+o.LCOE.real.exportInstall;

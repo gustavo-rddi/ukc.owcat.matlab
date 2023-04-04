@@ -43,7 +43,6 @@ for i = 1 : stocVar.nSamples + 1
    
     oCase = calculateProjectReturns(oCase, data, stocVar, markMods);
     
-    o.OWF.loc = 'UK'; % test
     switch upper(o.OWF.loc);
     
        case 'FR'; oCase = calculateSubsidyFR(oCase, data, stocVar, markMods);

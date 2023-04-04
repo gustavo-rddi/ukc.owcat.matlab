@@ -38,6 +38,7 @@ for i = 1 : o.OWF.nOSS
     o.offshoreSS(i).dPortCon  = mean([o.WTG(o.offshoreSS(i).iWTGcon).dPortCon]);
     o.offshoreSS(i).dPortOM   = mean([o.WTG(o.offshoreSS(i).iWTGcon).dPortCon]);
     o.offshoreSS(i).pDrill    = mean([o.WTG(o.offshoreSS(i).iWTGcon).pDrill]);
+    o.offshoreSS(i).soilType  = mean([o.WTG(o.offshoreSS(i).iWTGcon).soilType]);
     
     if o.OWF.nOSS > 1
     

@@ -1,12 +1,5 @@
 function val = getNestedField(obj, field)
 
-% ---
-% strfind(x,a) finds all the occurences of a in x
-% numel counts how many times a was found in x
-% in other words, this counts how many 'sub-levels' the field
-% has as indicated by the character '.'
-% ---
-
 %determine remaining field sub-levels%
 nestLevel = numel(strfind(field,'.'));
 

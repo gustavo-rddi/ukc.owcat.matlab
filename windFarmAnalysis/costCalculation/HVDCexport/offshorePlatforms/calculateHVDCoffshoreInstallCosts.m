@@ -46,11 +46,22 @@ for i = 1 : o.OWF.nColl
             + vesselCharterCost(data, hInstallJKT, 'HLV', {'grout'}, data.econ.yrOper-2, stocVar) ...
             + vesselCharterCost(data, hInstallSP, 'RDV', [], data.econ.yrOper-2, stocVar) ...
             + scourProtectionMaterialCost(data, data.fnd.JKT.mSPmat, data.econ.yrOper-2, stocVar);
-        
-    %determine time to install a single cable%
-    hLayCBL = data.HVAC.hPrep/data.vessel.CLV.wOp  ...
+    
+    switch o.zone.fDrill
+    
+    case 0
+        %determine time to install a single cable in simple soil%
+        hLayCBL = data.HVAC.hPrep/data.vessel.CLV.wOp  ...
             + data.HVAC.hPullIn/data.vessel.CLV.wOp ...
-            + o.offshoreColl(i).lInterConnect*(1/data.vessel.CLV.vLay)/data.vessel.CLV.wOp;
+            + o.offshoreColl(i).lInterConnect*(1/data.vessel.CLV.vLaySimp)/data.vessel.CLV.wOp;
+        
+    case 1
+        %determine time to install a single cable complex soil%
+        hLayCBL = data.HVAC.hPrep/data.vessel.CLV.wOp  ...
+            + data.HVAC.hPullIn/data.vessel.CLV.wOp ...
+            + o.offshoreColl(i).lInterConnect*(1/data.vessel.CLV.vLayComp)/data.vessel.CLV.wOp;
+         
+    end
     
     %determine time to trench a single cable%
     hTrenchCBL = 2*data.vessel.CBV.hLaunch/data.vessel.CBV.wOp ...
@@ -123,11 +134,24 @@ for i = 1 : o.OWF.nConv
             + vesselCharterCost(data, hInstallJKT, 'HLV', {'grout'}, data.econ.yrOper-2, stocVar) ...
             + vesselCharterCost(data, hInstallSP, 'RDV', [], data.econ.yrOper-2, stocVar) ...
             + scourProtectionMaterialCost(data, data.fnd.JKT.mSPmat, data.econ.yrOper-2, stocVar);
-        
-    %determine time to install a single cable%
-    hLayCBL = data.HVAC.hPrep/data.vessel.CLV.wOp  ...
-            + data.HVAC.hPullIn/data.vessel.CLV.wOp ...
-            + o.offshoreConv(i).lOffshore*(1/data.vessel.CLV.vLay)/data.vessel.CLV.wOp;
+    
+        switch o.zone.fDrill
+            
+            case 0
+           
+            %determine time to install a single cable in simple soil%
+            hLayCBL = data.HVAC.hPrep/data.vessel.CLV.wOp  ...
+                    + data.HVAC.hPullIn/data.vessel.CLV.wOp ...
+                    + o.offshoreConv(i).lOffshore*(1/data.vessel.CLV.vLaySimp)/data.vessel.CLV.wOp;
+                
+            case 1
+                
+            %determine time to install a single cable in simple soil%
+            hLayCBL = data.HVAC.hPrep/data.vessel.CLV.wOp  ...
+                    + data.HVAC.hPullIn/data.vessel.CLV.wOp ...
+                    + o.offshoreConv(i).lOffshore*(1/data.vessel.CLV.vLayComp)/data.vessel.CLV.wOp;   
+                
+        end 
     
     %determine time to trench a single cable%
     hTrenchCBL = 2*data.vessel.CBV.hLaunch/data.vessel.CBV.wOp ...

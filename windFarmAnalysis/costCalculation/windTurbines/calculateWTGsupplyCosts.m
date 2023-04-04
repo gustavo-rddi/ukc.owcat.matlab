@@ -27,6 +27,6 @@ Ctrans = WTGtransportCosts(o, data, o.OWF.nWTG, stocVar, markMods);
 Cpre = WTGpreassemblyCost(o, data, o.OWF.nWTG, stocVar, markMods);
 
 %add indirect WTG supply costs to OWF total%
-o.CAPEX.real.turbSupply = o.CAPEX.real.turbSupply + Ctrans + Cpre;
+o.CAPEX.real.turbSupply = o.CAPEX.real.turbSupply + 0*Ctrans + 0*Cpre;
 
     

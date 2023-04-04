@@ -9,3 +9,7 @@ o = calculateHVDCexportCableCosts(o, data, stocVar, markMods);
 
 %calculate cost of onshore equipment supply%
 o = calculateHVDCgridSubstationCosts(o, data, stocVar, markMods);
+
+o.CAPEX.real.exportSupply = 0;
+o.CAPEX.real.substationSupply = 0;
+o.CAPEX.real.onshoreSupply = 0;

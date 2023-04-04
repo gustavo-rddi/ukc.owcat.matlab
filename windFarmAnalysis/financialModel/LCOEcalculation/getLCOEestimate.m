@@ -24,7 +24,6 @@ fInfl = (data.CPI.(data.econ.(o.OWF.loc).curr)(end)/data.CPI.(data.econ.(o.OWF.l
 %calculate equivalent real discount rate%
 WACCreal = (1 + o.finance.kHurdle)/fInfl - 1;
 
-
 %calculate capital return factor%
 alpha = WACCreal/(1 - (1+WACCreal)^-data.WTG.nOper);
 

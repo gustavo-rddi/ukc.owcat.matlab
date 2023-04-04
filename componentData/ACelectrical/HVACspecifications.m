@@ -5,7 +5,7 @@ function [HVAC, OHVS, OTM] = HVACspecifications()
 %%-----------------------------------------------------------------------%%
 HVAC.nMinTrans  = 2;          %min. number of transformers per SS (SQSS) %%
 HVAC.capMaxTran = {1000,'MW'};     %max. capacity of transformers (SQSS) %%
-HVAC.capMaxCBL  = {1320,'MW'};       %max. allowed cable capacity (SQSS) %%
+HVAC.capMaxCBL  = {350,'MW'};       %max. allowed cable capacity (SQSS) %%
 %%-----------------------------------------------------------------------%%
 HVAC.VgridCon   = {400,'kV'};                   %grid connection voltage %%
 HVAC.fAvailSS   = {99,'%'};        %onshore HVAC substation availability %%

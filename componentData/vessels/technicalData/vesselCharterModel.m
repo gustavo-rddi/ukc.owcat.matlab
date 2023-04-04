@@ -51,7 +51,7 @@ else
 end
 
 %additional installation time if drilling required%
-if strcmpi(objType, 'MP') || strcmpi(objType, 'PP') && strcmpi(mode, 'install')
+if (strcmpi(objType, 'MP') || strcmpi(objType, 'PP')) && strcmpi(mode, 'install')
     hInstall = hInstall + data.(objType).dhDrill * mean([objVect.pDrill]);
 end
 
@@ -81,6 +81,7 @@ switch data.(objType).compSup
         
         %determine vessel travel and moving times%
         vTravel = data.vessel.(data.(objType).instVes).vTravel;
+        vMove = data.vessel.(data.(objType).instVes).vMove;
         
         %get vessel operation weather window%
         wOp = data.vessel.(data.(objType).instVes).wOp;
@@ -95,6 +96,7 @@ switch data.(objType).compSup
         
         %determine vessel travel and moving times%
         vTravel = min(data.vessel.(data.(objType).instVes).vTravel, data.vessel.(data.(objType).compSup).vTravel);
+        vMove = min(data.vessel.(data.(objType).instVes).vMove, data.vessel.(data.(objType).compSup).vMove);
         
         %get most restrictive vessel operation weather window%
         wOp = min(data.vessel.(data.(objType).instVes).wOp, data.vessel.(data.(objType).compSup).wOp);
@@ -109,7 +111,7 @@ end
 
 %calculate vessel travelling and moving times%
 hTravel = 2*mean([objVect.dPortCon])/vTravel;
-hMove = mean([objVect.dSpace])/vTravel;
+hMove = mean([objVect.dSpace])/vMove;
 
 %determine base charter duration%
 hPlan = hLoadPlan * nLoad ...
@@ -140,7 +142,7 @@ switch data.(objType).compSup
     
     case 'self'
         %add additional drilling for installation in complex soil%
-        if strcmpi(mode, 'install') && o.zone.fDrill ~= 0
+        if strcmpi(mode, 'install') && o.zone.fDrill(1) ~= 0
 
             if  strcmpi(objType, 'MP')
                 

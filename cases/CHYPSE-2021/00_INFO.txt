@@ -1,4 +1,0 @@
-20200120 OWFC - Market and Site Data - base case results
-20200120 OWFC - Market and Site Data_altSites - Type A and Type D alt specs (i.e. lower w/s for A and higher depth for D) 
-20200120 OWFC - Market and Site Data_incCN - installed capacity includes China
-20200120 OWFC - Market and Site Data_incCN_altSites - installed capacity includes China and alt sites

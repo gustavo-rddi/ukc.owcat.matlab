@@ -15,7 +15,7 @@ WTG.instVes  = 'HLJU';                          %WTG installation vessel %%
 WTG.compSup  = 'self';      %component supply vessel during installation %%
 %%-----------------------------------------------------------------------%%
 WTG.LRinst   = {5,'%'};             %learning rate for WTG installation %%
-WTG.Nref     = 70;          %reference number of units for learning rate %%
+WTG.Nref     = 50;          %reference number of units for learning rate %%
 WTG.LRman   = {0.5,'%'};             %learning rate for WTG installation %%
 %%-----------------------------------------------------------------------%%
 WTG.fAvail   = {95,'%'};                  %average wind WTG availability %%
@@ -34,6 +34,6 @@ WTG.effBetz  = {75,'%'};                   %design-point Betz efficiency %%
 %%-----------------------------------------------------------------------%%
 WTG.rhoNom   = {1.225,'kg/m3'};                %design-point air density %%
 %%-----------------------------------------------------------------------%%
-WTG.cSpecDef = {1081,strcat(char(8364),'/kW')};        %default WTG cost for generic units %%
+WTG.cSpecDef = {1000,'€/kW'};        %default WTG cost for generic units %%
 WTG.currDef  = 'EUR';                         %default WTG cost currency %%
-WTG.yearRef  = 2015;                    %default WTG cost reference year %%
+WTG.yearRef  = 2021;                    %default WTG cost reference year %%
